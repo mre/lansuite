@@ -28,7 +28,7 @@ LANSuite is a administration system for LAN-Parties based.
 
 ### Docker
 
-We assume that you have a running [Docker Community Edition](https://www.docker.com/community-edition) installed.
+We assume that you have a running [Docker Community Edition](https://www.docker.com/community-edition) and [composer](https://getcomposer.org/) installed.
 
 ```
 $ git clone https://github.com/lansuite/lansuite.git
@@ -37,11 +37,12 @@ $ touch ./inc/base/config.php
 $ # Add the content of the example configuration file below into ./inc/base/config.php 
 $ chmod 0777 ./inc/base/config.php
 $ chmod -R 0777 ./ext_inc/
+$ composer install
 $ docker-compose up
 ```
 
 This will start a [Nginx webserver](https://nginx.org/) with a [php-fpm](https://secure.php.net/manual/en/install.fpm.php) configuration and a [MySQL database](https://www.mysql.com/) for you.
-After everything started you should be able to visit http://<Your-Docker-IP>:8080/ and see a running LanSuite-System.
+After everything started you should be able to visit http://`<Your-Docker-IP>`:8080/ and see a running LanSuite-System.
 
 *Attention*: This docker setup is not suggested for production.
 
